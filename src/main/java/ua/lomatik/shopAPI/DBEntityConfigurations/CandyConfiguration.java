@@ -14,11 +14,11 @@ public class CandyConfiguration {
     @Bean
     public CommandLineRunner commandLineRunner(CandyRepository candyRepository){
         return args -> {
-            candyRepository.saveAll(List.of(
-                    new Candy("Рачки", 1234567890),
-                    new Candy("Конфетті", 1234567890),
-                    new Candy("Рачки", 1234567890),
-            ));
+            List<Candy> entities = new java.util.ArrayList<>();
+            entities.add(new Candy("Рачки", 1234567890));
+            entities.add(new Candy("Конфетті", 1234567892));
+            entities.add(new Candy("ЖЛ", 1234567890));
+            candyRepository.saveAll(entities);
         };
     }
 

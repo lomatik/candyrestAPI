@@ -1,9 +1,6 @@
 package ua.lomatik.shopAPI.DBControllers;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import ua.lomatik.shopAPI.DBEntities.Candy;
 import ua.lomatik.shopAPI.DBServices.CandyService;
 
@@ -28,4 +25,15 @@ public class CandyController {
     public void addCandy(Candy candy) {
         candyservice.add(candy);
     }
+
+    @DeleteMapping(path = "delete/{candyId}")
+    public void deleteCandy(@PathVariable Long candyId) {
+        candyservice.delete(candyId);
+    }
+
+    @PutMapping(path = "candy")
+    public void deleteCandy(@RequestBody Candy candy) {
+        candyservice.update(candy);
+    }
 }
+

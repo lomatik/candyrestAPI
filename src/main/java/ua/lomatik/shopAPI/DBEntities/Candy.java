@@ -9,6 +9,7 @@ public class Candy {
     @GeneratedValue(strategy= GenerationType.SEQUENCE, generator = "candy_sequence")
     private Long id;
     private String name;
+    @Column(unique = true)
     private int bar_code;
 
     public Candy() {}
