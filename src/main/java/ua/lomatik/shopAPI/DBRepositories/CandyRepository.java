@@ -1,12 +1,12 @@
 package ua.lomatik.shopAPI.DBRepositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import ua.lomatik.shopAPI.DBEntities.Candy;
+import ua.lomatik.shopAPI.DBEntities.CandyEntity;
 
 import java.util.Optional;
 
-public interface CandyRepository extends JpaRepository<Candy, Long> {
+public interface CandyRepository extends JpaRepository<CandyEntity, Long> {
 
-    Optional<Candy> findCandyByBarCode(int bar_code);
+    Optional<CandyEntity> findCandyByBarCode(int bar_code);
 
 }

@@ -1,7 +1,7 @@
 package ua.lomatik.shopAPI.DBServices;
 
 import org.springframework.stereotype.Service;
-import ua.lomatik.shopAPI.DBEntities.Candy;
+import ua.lomatik.shopAPI.DBEntities.CandyEntity;
 import ua.lomatik.shopAPI.DBRepositories.CandyRepository;
 import ua.lomatik.shopAPI.response.RestApiException;
 
@@ -17,30 +17,30 @@ public class CandyService {
         this.candyRepository = candyRepository;
     }
 
-    public List<Candy> getCandies() {
+    public List<CandyEntity> getCandies() {
         return candyRepository.findAll();
     }
 
-    public void add(Candy candy){
-        if ((candyRepository.findCandyByBarCode(candy.getBar_code()).isPresent())) {
+    public void add(CandyEntity candyEntity){
+        if ((candyRepository.findCandyByBarCode(candyEntity.getBarCode()).isPresent())) {
             throw new RestApiException("BarCode is busy");
         }
-        candyRepository.save(candy);
+        candyRepository.save(candyEntity);
     }
 
     public void delete(Long id){
         candyRepository.deleteById(id);
     }
 
-    public void update(Candy candy) {
-        Optional<Candy> row = candyRepository.findById(candy.getId());
+    public void update(CandyEntity candyEntity) {
+        Optional<CandyEntity> row = candyRepository.findById(candyEntity.getId());
         if(row.isPresent()) {
-            Candy item = row.get();
-            if(!candy.getName().isEmpty()){
-                item.setName(candy.getName());
+            CandyEntity item = row.get();
+            if(!candyEntity.getName().isEmpty()){
+                item.setName(candyEntity.getName());
             }
-            if(candy.getBar_code() != 0){
-                item.setBar_code(candy.getBar_code());
+            if(candyEntity.getBarCode() != 0){
+                item.setBarCode(candyEntity.getBarCode());
             }
             candyRepository.save(item);
         }

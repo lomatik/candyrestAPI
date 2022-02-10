@@ -1,7 +1,7 @@
-package ua.lomatik.shopAPI.DBControllers;
+package ua.lomatik.shopAPI.Controllers;
 
 import org.springframework.web.bind.annotation.*;
-import ua.lomatik.shopAPI.DBEntities.Candy;
+import ua.lomatik.shopAPI.DBEntities.CandyEntity;
 import ua.lomatik.shopAPI.DBServices.CandyService;
 
 import java.util.List;
@@ -17,23 +17,23 @@ public class CandyController {
     }
 
     @GetMapping(path = "list")
-    public List<Candy> list() {
+    public List<CandyEntity> list() {
         return candyservice.getCandies();
     }
 
     @PostMapping(path = "add")
-    public void addCandy(Candy candy) {
-        candyservice.add(candy);
+    public void addCandyRequest(CandyEntity candyEntity) {
+        candyservice.add(candyEntity);
     }
 
     @DeleteMapping(path = "delete/{candyId}")
-    public void deleteCandy(@PathVariable Long candyId) {
+    public void deleteCandyRequest(@PathVariable Long candyId) {
         candyservice.delete(candyId);
     }
 
-    @PutMapping(path = "candy")
-    public void deleteCandy(@RequestBody Candy candy) {
-        candyservice.update(candy);
+    @PutMapping(path = "update")
+    public void updateCandyRequest(@RequestBody CandyEntity candyEntity) {
+        candyservice.update(candyEntity);
     }
 }
 

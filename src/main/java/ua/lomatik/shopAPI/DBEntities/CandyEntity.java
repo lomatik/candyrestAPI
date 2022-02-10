@@ -3,20 +3,20 @@ package ua.lomatik.shopAPI.DBEntities;
 import javax.persistence.*;
 
 @Entity
-public class Candy {
+public class CandyEntity {
     @Id
     @SequenceGenerator(name = "candy_sequence", sequenceName = "candy_sequence")
     @GeneratedValue(strategy= GenerationType.SEQUENCE, generator = "candy_sequence")
     private Long id;
     private String name;
     @Column(unique = true)
-    private int bar_code;
+    private int barCode;
 
-    public Candy() {}
+    public CandyEntity() {}
 
-    public Candy(String name, int bar_code) {
+    public CandyEntity(String name, int barCode) {
         this.name = name;
-        this.bar_code = bar_code;
+        this.barCode = barCode;
     }
 
     public Long getId() {
@@ -35,12 +35,12 @@ public class Candy {
         this.name = name;
     }
 
-    public int getBar_code() {
-        return bar_code;
+    public int getBarCode() {
+        return barCode;
     }
 
-    public void setBar_code(int bar_code) {
-        this.bar_code = bar_code;
+    public void setBarCode(int barCode) {
+        this.barCode = barCode;
     }
 
     @Override
@@ -48,7 +48,7 @@ public class Candy {
         return "Candy{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", bar_code=" + bar_code +
+                ", bar_code=" + barCode +
                 '}';
     }
 }
