@@ -7,9 +7,11 @@ public class CandyEntity {
     @Id
     @SequenceGenerator(name = "candy_sequence", sequenceName = "candy_sequence")
     @GeneratedValue(strategy= GenerationType.SEQUENCE, generator = "candy_sequence")
+    @Column(name = "id")
     private Long id;
+    @Column(name = "name")
     private String name;
-    @Column(unique = true)
+    @Column(unique = true, name = "bar_code")
     private int barCode;
 
     public CandyEntity() {}
