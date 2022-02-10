@@ -1,8 +1,8 @@
-package ua.lomatik.shopAPI.DBServices;
+package ua.lomatik.shopAPI.dbservices;
 
 import org.springframework.stereotype.Service;
-import ua.lomatik.shopAPI.DBEntities.CandyEntity;
-import ua.lomatik.shopAPI.DBRepositories.CandyRepository;
+import ua.lomatik.shopAPI.dbentities.CandyEntity;
+import ua.lomatik.shopAPI.dbrepositories.CandyRepository;
 import ua.lomatik.shopAPI.response.RestApiException;
 
 import java.util.List;

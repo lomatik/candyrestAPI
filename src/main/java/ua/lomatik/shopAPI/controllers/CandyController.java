@@ -1,8 +1,8 @@
-package ua.lomatik.shopAPI.Controllers;
+package ua.lomatik.shopAPI.controllers;
 
 import org.springframework.web.bind.annotation.*;
-import ua.lomatik.shopAPI.DBEntities.CandyEntity;
-import ua.lomatik.shopAPI.DBServices.CandyService;
+import ua.lomatik.shopAPI.dbentities.CandyEntity;
+import ua.lomatik.shopAPI.dbservices.CandyService;
 
 import java.util.List;
 

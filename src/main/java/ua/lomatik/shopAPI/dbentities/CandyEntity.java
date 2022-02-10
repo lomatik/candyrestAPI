@@ -1,4 +1,4 @@
-package ua.lomatik.shopAPI.DBEntities;
+package ua.lomatik.shopAPI.dbentities;
 
 import javax.persistence.*;
 

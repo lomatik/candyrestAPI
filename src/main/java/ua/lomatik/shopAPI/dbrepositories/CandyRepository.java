@@ -1,7 +1,7 @@
-package ua.lomatik.shopAPI.DBRepositories;
+package ua.lomatik.shopAPI.dbrepositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import ua.lomatik.shopAPI.DBEntities.CandyEntity;
+import ua.lomatik.shopAPI.dbentities.CandyEntity;
 
 import java.util.Optional;
 
